@@ -1,7 +1,12 @@
-﻿internal class Program
+﻿using FacadePattern;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        IUserFacingFacade facade = new UserFacingFacade();
+        int cartid = facade.AddToCart(101,4);
+        facade.PlaceOrder(cartid, 100001);
+
     }
 }
